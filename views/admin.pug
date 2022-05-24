@@ -1,0 +1,100 @@
+doctype html
+html
+  head
+    title= "admin"
+    <meta charset="UTF-8">
+    <meta name="description" content="sber-pb conference">
+    <meta name="keywords" content="sber-pb">
+    <meta name="author" content="">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div#app.work( v-bind:class="{visible:loaded}" )
+      .adminMenu
+        .adminMenuItems
+          .aminMenuItem(v-on:click="sect=2" v-bind:class="{active:sect==2}") Вопросы
+          .aminMenuItem(v-on:click="sect=1" v-bind:class="{active:sect==1}") Чат
+          .aminMenuItem(v-on:click="sect=0" v-bind:class="{active:sect==0}") Пользователи
+          .aminMenuItem(v-on:click="sect=4" v-bind:class="{active:sect==4}") Статистика
+          .aminMenuItem(v-on:click="sect=3" v-bind:class="{active:sect==3}") Контент
+      .adminWr
+        .adminSect(v-if="sect==0")
+          .adminSectLoader.loaderWr(v-if="showLoader")
+              .loader
+              .loaderText идет загрузка...
+          .adminBody(v-show="!showLoader")
+            .adminSectTitle Зарегистрированных пользователей: {{users.length}}
+            table(cellspacing="0" cellpadding="0" border="0")
+              tr(v-for="(user, i) in users")
+                td
+                  .adminTd {{i+1}}
+                td
+                  .adminTd {{user.f}} {{user.i}} {{user.o}} &nbsp;
+                td
+                  .adminTd {{user.email}}
+                td
+                  .adminTd  {{moment(user.date).format('DD.MM.YYYY HH:mm')}}
+                td
+                  .adminTd {{user.online?"online":"&nbsp;"}}
+        .adminSect(v-if="sect==1" )
+          .adminSectLoader.loaderWr(v-if="showLoader")
+            .loader
+            .loaderText идет загрузка...
+          .adminBody(v-show="!showLoader")
+            .adminSectTitle Сообщаний в чате: {{chat.length}}
+          .playerChatWr
+            .playerChatPole#chatBox
+              .playerChatPoleWr
+                .playerChatItem(v-for="item in chat" v-if="!item.isDeleted ")
+                  .playerChatTitle {{moment(item.date).format('HH:mm')}} {{item.f}} {{item.i}} {{item.o}}
+                  .playerChatText {{item.text}}
+                  .playerChatDate.btnWr
+                    .adminToQBtn(v-on:click="chatToQ(item)")  Переместить в вопросы
+                    .adminDeleteBtn(v-on:click="deleteChat(item)")  Удалить
+
+        .adminSect(v-if="sect==2")
+          .adminSectLoader.loaderWr(v-if="showLoader")
+            .loader
+            .loaderText идет загрузка...
+          .adminBody(v-show="!showLoader")
+            .adminSectTitle Вопросов: {{q.length}}
+            .playerChatWr
+              .playerChatPole#qBox
+                .playerChatPoleWr
+                  .playerChatItem(v-for="item in q" v-if="!item.isDeleted ")
+                    .playerChatTitle {{moment(item.date).format('HH:mm')}}
+                    //{{item.f}} {{item.i}} {{item.o}}
+                    .playerChatText {{item.text}}
+                    .playerChatDate.btnWr
+                      .adminDeleteBtn(v-on:click="deleteQ(item)") Удалить
+        .adminSect(v-if="sect==3")
+          .adminSectLoader.loaderWr(v-if="showLoader")
+            .loader
+            .loaderText идет загрузка...
+          .adminBody(v-show="!showLoader")
+            .adminSectTitle Контент:
+              .adminSectBtn(v-on:click="saveContent()") Сохранить
+              textarea.adminJsonTextArea(v-model="descr.content")
+            .adminSectTitle Спикеры:
+              .adminSectBtn(v-on:click="saveSpeakers()") Сохранить
+              textarea.adminJsonTextArea(v-model="descr.speakers")
+            .adminSectTitle Внешний вид:
+              .adminSectBtn(v-on:click="saveSite()") Сохранить
+              textarea.adminJsonTextArea(v-model="descr.site")
+        .adminSect(v-if="sect==4" )
+          .adminSectLoader.loaderWr(v-if="showLoader")
+            .loader
+            .loaderText идет загрузка...
+          .adminBody(v-show="!showLoader")
+            .adminSectTitle Статистика
+            .adminSectTitle Сейчас на сайте: {{stat.now}}
+            .adminSectTitle Всего зашло: {{stat.loginsCount}}
+            .adminSectTitle График
+              #container( style="width: 500px; height: 400px;")
+
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+    script(src='/javascripts/vue.min.js')
+    script(src='/javascripts/moment.min.js')
+    script(src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js")
+    script(src='/javascripts/adminScript.js')
+

@@ -1,0 +1,54 @@
+{
+  "pageTitle": {
+    "ru": "Ночь темнее всего перед рассветом. Российский рынок в период геополитических рисков?",
+    "en": "The night is darkest before the dawn. The Russian market at a time of geopolitical risks"
+  },
+  "title": {
+    "ru": "Ночь темнее всего перед рассветом.<br>Российский рынок в период геополитических рисков",
+    "en": "The night is darkest before the dawn. <br>The Russian market at a time of geopolitical risks?"
+  },
+  "date": {
+    "ru": "02 марта",
+    "en": "Mach, 02"
+  },
+  "time": {
+    "ru": "19:00",
+    "en": "7 PM"
+  },
+  "lid": {
+    "ru": "Дискуссия аналитиков ведущих российских private-банков. <br><br>Российский рынок на прошлой неделе пережил один из самых тяжелых моментов за свою историю: крупнейший обвал бирж с 2008 года, показавший уязвимость российской экономики. Что нас ждет дальше и можно ли надеяться, что кризис позади?<br><br>В Фокусе:",
+    "en": "Discussion by analysts of leading Russian private banks <br><br>Last week, Russia experienced one of its worst moments ever: the biggest stock market crash since 2008, showing the vulnerability of the Russian economy. What's next for us, and can we hope that the crisis is over?<br><br>In focus:"
+  },
+  "subTitle": {
+    "ru": "В ходе нашей дискуссии мы обсудим:",
+    "en": "We will discuss:"
+  },
+  "list": [
+    {
+      "ru": "Кто заработал на кризисе?",
+      "en": "Who made money from the crisis? "
+    },
+    {
+      "ru": "Можно ли ждать быстрого восстановления?",
+      "en": "Can we expect a quick recovery?"
+    },
+    {
+      "ru": "Российские облигации - в зоне риска?",
+      "en": "Are Russian bonds at risk?"
+    },
+    {
+      "ru": "Готовы ли мы к самому жесткому сценарию?",
+      "en": "Are we ready for the toughest scenario?"
+    }
+  ],
+  "footerText": [
+    {
+      "ru": "Sber Private Banking – формат частного банковского обслуживания в ПАО Сбербанк.",
+      "en": "Sber Private Banking is a format of private banking services at PJSC Sberbank."
+    },
+    {
+      "ru": "ПАО Сбербанк. Генеральная лицензия Банка России на осуществление банковских операций № 1481 от 11.08.2015.",
+      "en": "PJSC Sberbank. General license of the Bank of Russia for banking operations No. 1481 dated August 11, 2015"
+    }
+  ]
+}
