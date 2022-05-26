@@ -1,0 +1,51 @@
+extends pronalogLayout
+
+block content
+  div(style="width: 100%;")
+
+    div.bbbb
+      .loaderWr(v-if="stage==0" style="height: 100%;")
+        .loader
+        .loaderText !{site.loading[lang]}
+      div(v-if="stage==1")
+        input.regInput#finput(placeholder=site.f[lang]+"*" v-model="user.f" v-on:change="checkf(user.f)" onkeypress="if(event.keyCode==13) document.getElementById('iinput').focus()")
+        .regInputError
+          .regInputErrorTitle(v-bind:class="{active:err.f}") !{site.fError[lang]}
+        input.regInput#iinput(placeholder=site.i[lang]+"*" v-model="user.i" v-on:change="checki(user.i)" onkeypress="if(event.keyCode==13) document.getElementById('oinput').focus()")
+        .regInputError
+          .regInputErrorTitle(v-bind:class="{active:err.i}") !{site.iError[lang]}
+        input.regInput#oinput(placeholder=site.o[lang] v-model="user.o" onkeypress="if(event.keyCode==13) document.getElementById('einput').focus()")
+        .regInputError
+          .regInputErrorTitle
+        input.regInput#einput(type="email" placeholder=site.email[lang]+"*" v-model="user.email" v-on:change="checkEmail(user.email)")
+        .regInputError
+          .regInputErrorTitle(v-bind:class="{active:err.e}") !{site.emailError[lang]}
+        .regPromice#regPromice(v-bind:class="{active:promice}" v-on:click="promice=!promice;  err.promice=!promice; ") !{site.promice[lang]} <a v-on:click.stop.prevent="showPromice=!showPromice"> !{site.promiceTo[lang]}</a>
+        .regInputError(v-on:click="promice=!promice;  err.promice=!promice")
+          .regInputErrorTitle(v-bind:class="{active:err.promice}") !{site.promiceError[lang]}
+        .regPromiceText(v-if="showPromice") !{site.promiceText[lang]}
+        .regBtn(type="button" v-on:click="register()" v-bind:class="{disabled:!user.promice}")
+          div !{site.registrationDo[lang]}
+      div(v-if="stage==3 || stage==4")
+
+        input.regInput(type="email" placeholder=site.email[lang]+"*" v-model="user.email" v-on:change="checkEmail(user.email)" v-on:keyup.enter="login()")
+        .regInputError
+            .regInputErrorTitle(v-bind:class="{active:err.e}")  !{site.emailError[lang]}
+
+        .toRegBtn.regInputError(v-if="stage==4")
+            .regInputErrorTitle.active(v-bind:class="{active:err.e}") !{site.emailNoFound[lang]} <br>!{lang=='ru'?'или':'or'} <span class="toReg" v-on:click="window.history.pushState('sber-pb', 'sber-pb', '/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
+            //.regInputErrorTitle.active(v-bind:class="{active:err.e}") !{site.emailNoFound[lang]} <br>или <span class="toReg" v-on:click=" document.location.href='/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
+        .regBtn(v-if="stage==3 || stage==4" v-on:click="login()" )
+          div !{lang == "ru" ? "Войти" : "Log on"}
+        .goToReg(v-if="stage==3 && !err.e") !{lang == 'ru' ? 'или' : 'or'}  <span class="toReg" v-on:click="window.history.pushState('sber-pb', 'sber-pb', '/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
+
+      div(v-if="stage==10" style="height: 100%;")
+        div.userRegComplite
+          div {{user.i}} {{user.o}},
+          div  !{site.waiting[lang]}
+          //div  !{site.toCalendar[lang]}
+          //.calendar
+            .googleCalButton(v-on:click="window.open('https://calendar.google.com/event?action=TEMPLATE&tmeid=NmJmNTI4ajlodHZwN2VnOTJlc2lscHFta3AgZGVuLnNoZXZjaGVua29AbQ&tmsrc=den.shevchenko%40gmail.com')") Google Calendar
+            .googleCalButton(v-on:click="window.open('/images/calendar.ics')") #{site.iCal[lang]}
+      div(v-if="stage==5" style="height: 100%;")
+        div PLAYR
