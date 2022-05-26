@@ -45,7 +45,7 @@ block content
           div  !{site.waiting[lang]}
           //script document.location.href="/player/ru";
           //div  !{site.toCalendar[lang]}
-          //.calendar
+          .calendar
             .googleCalButton(v-on:click="window.open('https://calendar.google.com/event?action=TEMPLATE&tmeid=NmJmNTI4ajlodHZwN2VnOTJlc2lscHFta3AgZGVuLnNoZXZjaGVua29AbQ&tmsrc=den.shevchenko%40gmail.com')") Google Calendar
             .googleCalButton(v-on:click="window.open('/images/calendar.ics')") #{site.iCal[lang]}
       div(v-if="stage==5" style="height: 100%;")
