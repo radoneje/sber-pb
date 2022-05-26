@@ -192,14 +192,14 @@ html
                       <iframe width="560" height="315" src="https://www.youtube.com/embed/434ciYDLqsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-          //.aboutForm
-            //.aboutFormTitle !{site.about[lang]}
-            //.aboutFormLid !{content.lid[lang]}
-            //.aboutFormItems
-            //  each item in content.list
-            //    .aboutFormItem !{item[lang]}
+          .aboutForm
+            .aboutFormTitle !{site.about[lang]}
+            .aboutFormLid !{content.lid[lang]}
+            .aboutFormItems
+              each item in content.list
+                .aboutFormItem !{item[lang]}
 
-          //.aboutForm
+          .aboutForm
             .aboutFormTitle !{site.speakers[lang]}
             .speakers
               each speaker in speakers
