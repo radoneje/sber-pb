@@ -25,7 +25,6 @@ router.get('/', async (req, res, next) =>{
  //res.redirect("/index/ru")
   res.json(true)
  // res.redirect("/registration/ru")
-
 });
 router.get('/index/:lang?', async (req, res, next) =>{
   if(!req.params.lang)
