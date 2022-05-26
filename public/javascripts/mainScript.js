@@ -387,7 +387,7 @@ function startCountDown(app){
         var s=duration.seconds().toString()
         if(s<10)
             s="0"+s;
-        document.getElementById("countDownTimer").innerHTML=ret+ h+ ':' + m+ ':' + s;
+        //document.getElementById("countDownTimer").innerHTML=ret+ h+ ':' + m+ ':' + s;
 
         setTimeout(updateTimer,interval)
     }
