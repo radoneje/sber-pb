@@ -389,10 +389,6 @@ function startCountDown(){
         var s=duration.seconds().toString()
         if(s<10)
             s="0"+h;
-
-        num = num.toString();
-        while (num.length < size) num = "0" + num;
-        return num;
         elem.innerHtml=ret+ h+ ':' + m+ ':' + s;
 
         setTimeout(updateTimer,interval)
