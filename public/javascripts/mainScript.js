@@ -382,20 +382,20 @@ function startCountDown(app){
         if(h>0) {
             if (h < 10)
                 h = "0" + h;
-            ret += h + " час., "
+            ret += h + " час, "
         }
         var m=duration.minutes().toString()
 
         if(m<10)
             m="0"+m;
-        ret += m + " мин., "
+        ret += m + " мин, "
 
         var s=duration.seconds().toString()
         if(s<10)
             s="0"+s;
 
         ret += s + " сек. "
-        document.getElementById("countDownTimer").innerHTML=ret;//
+        document.getElementById("countDownTimer").innerHTML="До начала осталось:<br>"ret;//
 
         setTimeout(updateTimer,interval)
     }
