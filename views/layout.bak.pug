@@ -192,9 +192,37 @@ html
                       <iframe width="560" height="315" src="https://www.youtube.com/embed/434ciYDLqsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+          .aboutForm
+            .aboutFormTitle !{site.about[lang]}
+            .aboutFormLid !{content.lid[lang]}
+            .aboutFormItems
+              each item in content.list
+                .aboutFormItem !{item[lang]}
 
+          .aboutForm
+            .aboutFormTitle !{site.speakers[lang]}
+            .speakers
+              each speaker in speakers
+                .speaker(vv-on:click="showSpeaker("+JSON.stringify(speaker)+")")
+                  .speakerPhoto !{"<img src='/images/"+speaker.img+"'>"}
+                  .sbeakerName !{speaker.name[lang]}
+                  .speakerPos !{speaker.position[lang]}
+          .aboutForm
+            .aboutFormLid !{content.addText[lang]}
 
-
+          //.aboutForm
+            .aboutFormTitle !{lang=='ru'?'Архив':"Archive"}
+            .archiveItemBox
+                .archiveItem
+                  if lang=='ru'
+                    .archiveTitle.sbeakerName Инвестиции будущего: Брилиантовая революция
+                    .archiveVideoWr.videoWrapper
+                      iframe(src="https://player.vimeo.com/video/529254338?color=d2d55f&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=false" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="allowfullscreen")
+                  else
+                    .archiveTitle.sbeakerName Investments of the future: Diamond revolution
+                    .archiveVideoWr.videoWrapper
+                      iframe( src="https://player.vimeo.com/video/529064166?color=d2d55f&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=false" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="allowfullscreen")
+          //include generalDisscus
         footer(style="height: 132px;")
               div.mainLogo
                 <svg width="113" height="32" viewBox="0 0 113 32" fill="none" xmlns="http://www.w3.org/2000/svg">
