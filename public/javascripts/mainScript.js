@@ -17,7 +17,6 @@ var app=new Vue({
         chatText:'',
         qText:'',
         chatTextSend:false,
-        countDown:"---",
     },
     methods:{
         newChat:async function(){
@@ -387,7 +386,7 @@ function startCountDown(app){
             m="0"+m;
         var s=duration.seconds().toString()
         if(s<10)
-            s="0"+h;
+            s="0"+s;
         document.getElementById("countDownTimer").innerHTML=ret+ h+ ':' + m+ ':' + s;
 
         setTimeout(updateTimer,interval)
