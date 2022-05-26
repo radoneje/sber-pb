@@ -17,7 +17,7 @@ var app=new Vue({
         chatText:'',
         qText:'',
         chatTextSend:false,
-        countDown:"",
+        countDown:"---",
     },
     methods:{
         newChat:async function(){
