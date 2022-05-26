@@ -17,6 +17,7 @@ var app=new Vue({
         chatText:'',
         qText:'',
         chatTextSend:false,
+        countDown:"",
     },
     methods:{
         newChat:async function(){
@@ -192,7 +193,7 @@ var app=new Vue({
         stage:async function () {
             console.log(this.stage)
             if(this.stage==10){
-                this.aliveUser();
+                this.aliveUser(this);
 
                 setTimeout( startCountDown,100)
 
@@ -357,7 +358,7 @@ var EPPZScrollTo =
         }
     };
 
-function startCountDown(){
+function startCountDown(app){
     var eventTime = moment("20220601T173000Z").unix();
     var elem=document.getElementById("countDownTimer")
     if(elem)
@@ -389,7 +390,7 @@ function startCountDown(){
         var s=duration.seconds().toString()
         if(s<10)
             s="0"+h;
-        elem.innerHtml=ret+ h+ ':' + m+ ':' + s;
+        app.countDown=ret+ h+ ':' + m+ ':' + s;
 
         setTimeout(updateTimer,interval)
     }
