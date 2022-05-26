@@ -260,6 +260,44 @@ var app=new Vue({
             }
             console.log("queryString",queryString);
 
+
+
+
+
+                var eventTime = '1366549200';
+
+
+                function  updateTimer(){
+                    var currentTime = moment().unix();
+                    var leftTime = eventTime - currentTime;//Now i am passing the left time from controller itself which handles timezone stuff (UTC), just to simply question i used harcoded values.
+                    var duration = moment.duration(leftTime, 'seconds');
+                    var interval = 1000;
+                    duration = moment.duration(duration.asSeconds() - 1, 'seconds');
+                    var ret="";
+                    var d=duration.days();
+                    if(d>0) {
+                        ret += d
+                        switch (d){
+                            case 1: ret+=" день, ";break;
+                            case 2: ret+=" дня, ";break;
+                            case 3: ret+=" дня, ";break;
+                            case 4: ret+=" дня, ";break;
+                            default: ret+=" дней, ";
+                        }
+                    }
+                    console.log( ret+ duration.hours()+ ':' + duration.minutes()+ ':' + duration.seconds());
+                    setTimeout(updateTimer,interval)
+                }
+
+
+                //Otherwise
+
+
+
+
+
+
+
         },500)
 
     }
