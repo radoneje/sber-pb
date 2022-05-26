@@ -41,6 +41,10 @@ router.get('/index/:lang?', async (req, res, next) =>{
 
 });
 
+router.get('/deposit/', async (req, res, next) =>{
+
+  res.redirect("/")
+});
 router.get('/pronalog/', async (req, res, next) =>{
 
   //res.render('work', { title: 'under constaction' });
