@@ -33,12 +33,12 @@ router.get('/index/:lang?', async (req, res, next) =>{
   if(!(req.params.lang=="ru" || req.params.lang=="en"))
     res.redirect("/index/ru")
 
-  //if(req.session["user"])
-  //  return res.redirect("/player/"+req.params.lang)
+  if(req.session["user"])
+    return res.redirect("/player/"+req.params.lang)
   //res.render('work', { title: 'under constaction' });
   var content=await req.knex.select("*").from("t_sbpb_settings").orderBy("id", 'desc')
   //res.redirect("/login/ru")
-  res.render('index', { title: 'sber-pb', stage:/*3*//*6*/1, lang:req.params.lang, speakers:content[0].speakers, site:content[0].site, content:content[0].content });
+  res.render('index', { title: 'sber-pb', stage:3/*3*//*6*/, lang:req.params.lang, speakers:content[0].speakers, site:content[0].site, content:content[0].content });
 
 });
 
