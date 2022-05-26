@@ -207,11 +207,7 @@ var app=new Vue({
             }
         }
     },
-    watch:{
-        stage:function(){
-            console.log("stage", this.stage)
-        }
-    },
+
     mounted:function () {
         var prom=this.user.promice;
 
