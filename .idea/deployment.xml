@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="sber-pb.ru" uploadOnCheckin="a97e5f9d-e8f2-47da-bd4d-9dfcd0f8c724" remoteFilesAllowedToDisappearOnAutoupload="false">
-    <option name="myUploadOnCheckinName" value="sber-pb.ru" />
-  </component>
+  <component name="PublishConfigData" serverName="sber-pb.ru" remoteFilesAllowedToDisappearOnAutoupload="false" />
 </project>

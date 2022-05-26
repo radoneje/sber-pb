@@ -266,7 +266,7 @@ var app=new Vue({
 
                 var eventTime = '1366549200';
 
-
+            updateTimer();
                 function  updateTimer(){
                     var currentTime = moment().unix();
                     var leftTime = eventTime - currentTime;//Now i am passing the left time from controller itself which handles timezone stuff (UTC), just to simply question i used harcoded values.
