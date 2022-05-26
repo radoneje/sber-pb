@@ -264,7 +264,7 @@ var app=new Vue({
 
 
 
-                var eventTime = '1366549200';
+                var eventTime = moment("20220601T173000Z").unix();
 
             updateTimer();
                 function  updateTimer(){
