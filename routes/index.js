@@ -50,7 +50,7 @@ router.get('/demo/', async (req, res, next) =>{
   //res.render('work', { title: 'under constaction' });
   var content=await req.knex.select("*").from("t_sbpb_settings").orderBy("id", 'desc')
   ///res.redirect("/login/ru")
-  res.render('index', { title: 'sber-pb', stage:6/*3 6 1*/, lang:req.params.lang, speakers:content[0].speakers, site:content[0].site, content:content[0].content });
+  res.render('index', { title: 'sber-pb', stage:6/*3 6 1*/, lang:"ru", speakers:content[0].speakers, site:content[0].site, content:content[0].content });
 
 });
 
