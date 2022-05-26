@@ -21,8 +21,8 @@ router.post('/admin', async (req, res, next) =>{
 /* GET home page. */
 router.get('/', async (req, res, next) =>{
   //res.render('work', { title: 'under constaction' });
- res.redirect("/index/ru")
- // res.redirect("/registration/ru")
+ //res.redirect("/index/ru")
+  res.redirect("/registration/ru")
 
 });
 router.get('/index/:lang?', async (req, res, next) =>{
