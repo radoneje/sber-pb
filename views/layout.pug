@@ -83,7 +83,7 @@ html
             div(v-if="stage<=1") !{site.registration[lang]}
             div(v-if="stage==10") !{site.registrationComplite[lang]}
             div(v-if="stage==3 || stage==4") !{site.autorisation[lang]}
-          .regFormBody#regFormBody(v-bind:class={autoscroll:showPromice})
+          .regFormBody#regFormBody(v-bind:class="{autoscroll:showPromice}")
             block content
         .tower
           .aboutForm
