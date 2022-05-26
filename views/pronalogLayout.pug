@@ -67,6 +67,7 @@ html
                 span.mainLangItem(class=""+lang=="en" onclick="changeLang('en')") en
               .playerTitle(v-if="isPlayer")
                 include titleProNalog.pug
+                div 111
             //.gradient
             //.mainMenu
               .mainMenuItem.active Регистрация
@@ -78,6 +79,7 @@ html
           .mainContent(v-bind:class="{player:isPlayer}")
             .mainTitle()
               include titleProNalog
+              div 222
         .regForm(v-if="!isPlayer ")
           .regFormHeader()
             div(v-if="stage<=1") !{site.registration[lang]}
