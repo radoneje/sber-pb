@@ -193,6 +193,7 @@ var app=new Vue({
             if(this.stage==10){
 
                 this.aliveUser();
+                startCountDown();
             }
             if(this.stage==5){
                 this.aliveUser();
@@ -259,58 +260,6 @@ var app=new Vue({
 
             }
             console.log("queryString",queryString);
-
-
-
-
-
-                var eventTime = moment("20220601T173000Z").unix();
-                var elem=document.getElementById("countDownTimer")
-                if(elem)
-                    updateTimer();
-                function  updateTimer(){
-                    var currentTime = moment().unix();
-                    var leftTime = eventTime - currentTime;//Now i am passing the left time from controller itself which handles timezone stuff (UTC), just to simply question i used harcoded values.
-                    var duration = moment.duration(leftTime, 'seconds');
-                    var interval = 1000;
-                    duration = moment.duration(duration.asSeconds() - 1, 'seconds');
-                    var ret="";
-                    var d=duration.days();
-                    if(d>0) {
-                        ret += d
-                        switch (d){
-                            case 1: ret+=" день, <br>";break;
-                            case 2: ret+=" дня, <br>";break;
-                            case 3: ret+=" дня, <br>";break;
-                            case 4: ret+=" дня, <br>";break;
-                            default: ret+=" дней, <br>";
-                        }
-                    }
-                    var h=duration.hours().toString()
-                    if(h<10)
-                        h="0"+h;
-                    var m=duration.minutes().toString()
-                    if(m<10)
-                        m="0"+m;
-                    var s=duration.seconds().toString()
-                    if(s<10)
-                        s="0"+h;
-
-                        num = num.toString();
-                    while (num.length < size) num = "0" + num;
-                    return num;
-                    elem.innerHtml=ret+ h+ ':' + m+ ':' + s;
-
-                    setTimeout(updateTimer,interval)
-                }
-
-
-                //Otherwise
-
-
-
-
-
 
 
         },500)
@@ -405,4 +354,46 @@ var EPPZScrollTo =
             this.scrollVerticalTickToPosition(currentPosition, targetPosition);
         }
     };
+
+function startCountDown(){
+    var eventTime = moment("20220601T173000Z").unix();
+    var elem=document.getElementById("countDownTimer")
+    if(elem)
+        updateTimer();
+    function  updateTimer(){
+        var currentTime = moment().unix();
+        var leftTime = eventTime - currentTime;//Now i am passing the left time from controller itself which handles timezone stuff (UTC), just to simply question i used harcoded values.
+        var duration = moment.duration(leftTime, 'seconds');
+        var interval = 1000;
+        duration = moment.duration(duration.asSeconds() - 1, 'seconds');
+        var ret="";
+        var d=duration.days();
+        if(d>0) {
+            ret += d
+            switch (d){
+                case 1: ret+=" день, <br>";break;
+                case 2: ret+=" дня, <br>";break;
+                case 3: ret+=" дня, <br>";break;
+                case 4: ret+=" дня, <br>";break;
+                default: ret+=" дней, <br>";
+            }
+        }
+        var h=duration.hours().toString()
+        if(h<10)
+            h="0"+h;
+        var m=duration.minutes().toString()
+        if(m<10)
+            m="0"+m;
+        var s=duration.seconds().toString()
+        if(s<10)
+            s="0"+h;
+
+        num = num.toString();
+        while (num.length < size) num = "0" + num;
+        return num;
+        elem.innerHtml=ret+ h+ ':' + m+ ':' + s;
+
+        setTimeout(updateTimer,interval)
+    }
+}
 
