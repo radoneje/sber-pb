@@ -278,11 +278,11 @@ var app=new Vue({
                     if(d>0) {
                         ret += d
                         switch (d){
-                            case 1: ret+=" день, ";break;
-                            case 2: ret+=" дня, ";break;
-                            case 3: ret+=" дня, ";break;
-                            case 4: ret+=" дня, ";break;
-                            default: ret+=" дней, ";
+                            case 1: ret+=" день, <br>";break;
+                            case 2: ret+=" дня, <br>";break;
+                            case 3: ret+=" дня, <br>";break;
+                            case 4: ret+=" дня, <br>";break;
+                            default: ret+=" дней, <br>";
                         }
                     }
                     console.log( ret+ duration.hours()+ ':' + duration.minutes()+ ':' + duration.seconds());
