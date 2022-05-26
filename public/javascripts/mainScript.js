@@ -193,7 +193,8 @@ var app=new Vue({
             if(this.stage==10){
 
                 this.aliveUser();
-                startCountDown();
+                setTimeout( startCountDown,100)
+
             }
             if(this.stage==5){
                 this.aliveUser();
