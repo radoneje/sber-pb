@@ -371,23 +371,31 @@ function startCountDown(app){
         if(d>0) {
             ret += d
             switch (d){
-                case 1: ret+=" день, <br>";break;
-                case 2: ret+=" дня, <br>";break;
-                case 3: ret+=" дня, <br>";break;
-                case 4: ret+=" дня, <br>";break;
-                default: ret+=" дней, <br>";
+                case 1: ret+=" день, ";break;
+                case 2: ret+=" дня, ";break;
+                case 3: ret+=" дня, ";break;
+                case 4: ret+=" дня, ";break;
+                default: ret+=" дней, ";
             }
         }
-        var h=duration.hours().toString()
-        if(h<10)
-            h="0"+h;
+        var h=duration.hours().toString();
+        if(h>0) {
+            if (h < 10)
+                h = "0" + h;
+            ret += h + " час., "
+        }
         var m=duration.minutes().toString()
+
         if(m<10)
             m="0"+m;
+        ret += m + " мин., "
+
         var s=duration.seconds().toString()
         if(s<10)
             s="0"+s;
-        document.getElementById("countDownTimer").innerHTML="До начала: "+ret+ h+ ':' + m+ ':' + s;
+
+        ret += s + " сек. "
+        document.getElementById("countDownTimer").innerHTML=ret;//
 
         setTimeout(updateTimer,interval)
     }
