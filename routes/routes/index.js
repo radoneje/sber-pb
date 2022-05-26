@@ -33,7 +33,7 @@ router.get('/index/:lang?', async (req, res, next) =>{
   if(!(req.params.lang=="ru" || req.params.lang=="en"))
     res.redirect("/index/ru")
 
-  if(req.session["user"])
+  //if(req.session["user"])
     return res.redirect("/player/"+req.params.lang)
   //res.render('work', { title: 'under constaction' });
   var content=await req.knex.select("*").from("t_sbpb_settings").orderBy("id", 'desc')
