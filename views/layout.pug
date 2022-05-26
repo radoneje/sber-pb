@@ -93,12 +93,12 @@ html
                   include  logo.pug
 
               .playerBody.a(v-if="stage==6")
-                div HERE!!!
+
                 .playerObj
                   .videoWrapper
                     <iframe style="overflow: hidden" id="playerIframe" width="560" height="315" src="/iframe.html"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    //iframe( src="https://front.sber.link/playerpb"+lang+".html" border="0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen)
-                //include playerCtrl.pug
+
+                include playerCtrl.pug
                 //.playerChatBox
                   include playerCtrl.pug
                   .playerChatWr(v-if="!chatIsActive")
