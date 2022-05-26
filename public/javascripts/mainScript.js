@@ -359,7 +359,6 @@ var EPPZScrollTo =
 
 function startCountDown(app){
     var eventTime = moment("20220601T160000Z").unix();
-    console.log("eventTime",  moment("20220601T160000Z").format("DD MM YYYY hh:mm:ss"))
         updateTimer();
     function  updateTimer(){
         var currentTime = moment().unix();
