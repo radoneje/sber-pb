@@ -190,9 +190,10 @@ var app=new Vue({
             },0)
         },
         stage:async function () {
+            console.log(this.stage)
             if(this.stage==10){
-
                 this.aliveUser();
+
                 setTimeout( startCountDown,100)
 
             }
