@@ -5,13 +5,15 @@
 </head>
 <body style="overflow: hidden">
 <div class="videoWrapper" style="overflow: hidden">
-<video id="my-video" style="overflow: hidden" controls width="1280" height="720" class="video-js vjs-big-play-centered" playsinline poster="/images/postersberpb.jpg" loop>
+<video id="my-video" style="overflow: hidden" controls width="1280" height="720" class="video-js vjs-big-play-centered" playsinline poster="/images/postersberpb.jpg" loop muted autoplay>
     <source src="/video/v00.mp4" type="video/mp4"/>
 </video>
 
 </div>
 <script src="/javascripts/video.js"></script>
 <script>var player = videojs('my-video');
+player.muted(true);
+player.play();
 
 </script>
 
