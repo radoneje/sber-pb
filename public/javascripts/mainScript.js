@@ -395,7 +395,7 @@ function startCountDown(app){
             s="0"+s;
 
         ret += s + " сек. "
-        document.getElementById("countDownTimer").innerHTML="До начала осталось:<br>"ret;//
+        document.getElementById("countDownTimer").innerHTML="До начала осталось:<br>"+ret;//
 
         setTimeout(updateTimer,interval)
     }
