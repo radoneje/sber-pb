@@ -1,0 +1,54 @@
+{
+  "pageTitle": {
+    "ru": "sber-pb  Инвестиции будущего: Брилиантовая революция",
+    "en": "sber-pb Investments of the future: Diamond revolution"
+  },
+  "title": {
+    "ru": "Инвестиции будущего: <br>Брилиантовая революция",
+    "en": "Investments of the future: <br>Diamond revolution"
+  },
+  "date": {
+    "ru": "25 марта",
+    "en": "March 25"
+  },
+  "time": {
+    "ru": "19:00",
+    "en": "19:00"
+  },
+  "lid": {
+    "ru": "Тема первого выпуска -  развенчание мифов самой дорогой отрасли, чей блеск ассоциируется с эксклюзивностью и богатством и как изменится самый консервативный рынок с приходом на него лабораторно выращенных бриллиантов.",
+    "en": "The theme of the first issue is debunking the myths of the most expensive industry, what brilliance is associated with exclusivity and wealth, and how the most conservative market will change with the arrival of laboratory-grown diamonds."
+  },
+  "subTitle": {
+    "ru": "В ходе нашей дискуссии мы обсудим:",
+    "en": "We will discuss:"
+  },
+  "list": [
+    {
+      "ru": "Что такое лабораторно выращенные алмазы и чем они отличаются от природных камней;",
+      "en": "What laboratory-grown diamonds are and how they differ from natural gems;"
+    },
+    {
+      "ru": "Как может измениться консервативный рынок бриллиантов в ближайшие несколько лет;",
+      "en": "How the conservative diamond market might change in the next few years;"
+    },
+    {
+      "ru": "Ожидать ли демократизации роскоши и смогут ли компании новой волны победить вековую монополию;",
+      "en": "Whether to expect the democratization of luxury and whether the companies of the new wave will be able to defeat the age-old monopoly;"
+    },
+    {
+      "ru": "Действительно ли любой бриллиант имеет инвестиционную ценность.",
+      "en": "Does any diamond really have investment value?"
+    }
+  ],
+  "footerText": [
+    {
+      "ru": "Sber Private Banking – формат частного банковского обслуживания в ПАО Сбербанк.",
+      "en": "Sber Private Banking is a format of private banking services at PJSC Sberbank."
+    },
+    {
+      "ru": "ПАО Сбербанк. Генеральная лицензия Банка России на осуществление банковских операций № 1481 от 11.08.2015.",
+      "en": "PJSC Sberbank. General license of the Bank of Russia for banking operations No. 1481 dated August 11, 2015"
+    }
+  ]
+}
