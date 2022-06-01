@@ -13,6 +13,8 @@
 <script src="/javascripts/video.js"></script>
 <script>
     videojs('my-video').ready(function () {
+
+        console.log("document.parentNode", document.parentNode);
     this.on('timeupdate', function () {
         console.log(this.currentTime());
     })
