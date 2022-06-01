@@ -12,7 +12,11 @@
 </div>
 <script src="/javascripts/video.js"></script>
 <script>var player = videojs('my-video');
+    var playlistElems=[];
 
+player.on("timeupdate", (e)=>{
+    console.log("timeupdate", e);
+})
 </script>
 
 </body>
