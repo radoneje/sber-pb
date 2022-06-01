@@ -39,7 +39,7 @@ block content
           div !{lang == "ru" ? "Войти" : "Log on"}
         .goToReg(v-if="stage==3 && !err.e") !{lang == 'ru' ? 'или' : 'or'}  <span class="toReg" v-on:click="window.history.pushState('sber-pb', 'sber-pb', '/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
 
-      div(v-if="stage==10" style="height: 100%;")
+      //div(v-if="stage==10" style="height: 100%;")
         div.userRegComplite
           div {{user.i}} {{user.o}},
           div  !{site.waiting[lang]}
