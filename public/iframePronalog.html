@@ -15,7 +15,7 @@
     videojs('my-video').ready(function () {
 
         var elems=window.parent.document.querySelectorAll('.playerTimingItem');
-        console.log("document.parentNode", document.elems);
+        console.log("document.parentNode", elems);
     this.on('timeupdate', function () {
         console.log(this.currentTime());
     })
