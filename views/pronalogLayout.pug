@@ -151,7 +151,9 @@ html
 
                 .playerChatBox
                   .playerTiming
-                        .playerTimingItem <span onclick="navigateToTime(3)">0:09</span> Вступление
+                        .playerTimingItem
+                          .playerTimingItemTime(onclick="navigateToTime(3)") 0:09
+                          .playerTimingItemText  Вступление
                         .playerTimingSubItem Изменения в персональных налогах:
                         .playerTimingItem <span onclick="navigateToTime(60)">1:06</span> Прогрессивная шкала налогообложения
                         .playerTimingItem <span onclick="navigateToTime(7*60+5)">7:11</span> Отмена налога на проценты по вкладам
