@@ -146,21 +146,20 @@ html
 
                 .playerObj
                   .videoWrapper
-                    if lang == "ru"
+
                       <iframe style="overflow: hidden" id="playerIframe" width="560" height="315" src="/iframePronalog.html"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                    else
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/434ciYDLqsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            .playerTiming
-                  .playerTimingItem <span onclick="navigateToTime(3)">0:09</span> Вступление
-                  .playerTimingItem Изменения в персональных налогах:
-                    .playerTimingSubItem <span onclick="navigateToTime(60)">1:06</span> Прогрессивная шкала налогообложения
-                    .playerTimingSubItem <span onclick="navigateToTime(7*60+5)">7:11</span> Отмена налога на проценты по вкладам
-                    .playerTimingSubItem <span onclick="navigateToTime(9*60+31)">9:37</span> Отмена штрафов за непредставление документов по контролируемой иностранной компании («КИК»)
-                  .playerTimingItem <span onclick="navigateToTime(12*60+10)">12:16</span> Амнистия 4.0
-                  .playerTimingItem <span onclick="navigateToTime(36*60+14)">36:20</span> Безналоговый перевод активов на физическое лицо с КИК
-                  .playerTimingItem <span onclick="navigateToTime(44*60+18)">44:24</span> Режим использования иностранных счетов
-                  .playerTimingItem <span onclick="navigateToTime(60*60+9*60+30)">1:09:45</span> Заключение
+                .playerChatBox
+                  .playerTiming
+                        .playerTimingItem <span onclick="navigateToTime(3)">0:09</span> Вступление
+                        .playerTimingSubItem Изменения в персональных налогах:
+                        .playerTimingItem <span onclick="navigateToTime(60)">1:06</span> Прогрессивная шкала налогообложения
+                        .playerTimingItem <span onclick="navigateToTime(7*60+5)">7:11</span> Отмена налога на проценты по вкладам
+                        .playerTimingItem <span onclick="navigateToTime(9*60+31)">9:37</span> Отмена штрафов за непредставление документов по контролируемой иностранной компании («КИК»)
+                        .playerTimingItem <span onclick="navigateToTime(12*60+10)">12:16</span> Амнистия 4.0
+                        .playerTimingItem <span onclick="navigateToTime(36*60+14)">36:20</span> Безналоговый перевод активов на физическое лицо с КИК
+                        .playerTimingItem <span onclick="navigateToTime(44*60+18)">44:24</span> Режим использования иностранных счетов
+                        .playerTimingItem <span onclick="navigateToTime(60*60+9*60+30)">1:09:45</span> Заключение
 
 
           .aboutForm
