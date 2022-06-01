@@ -1,48 +1,48 @@
 <html>
 <head>
-    <link rel='stylesheet', href='/stylesheets/style.css' />
-    <link href=" /javascripts/video-js.css" rel="stylesheet" />
+    <link rel='stylesheet' , href='/stylesheets/style.css'/>
+    <link href=" /javascripts/video-js.css" rel="stylesheet"/>
 </head>
 <body style="overflow: hidden">
 <div class="videoWrapper" style="overflow: hidden">
-<video id="my-video" style="overflow: hidden" controls width="1280" height="720" class="video-js vjs-big-play-centered" playsinline poster="/images/poster_v2.png">
-    <source src="/video/v2.mp4" type="video/mp4"/>
-</video>
+    <video id="my-video" style="overflow: hidden" controls width="1280" height="720"
+           class="video-js vjs-big-play-centered" playsinline poster="/images/poster_v2.png">
+        <source src="/video/v2.mp4" type="video/mp4"/>
+    </video>
 
 </div>
 <script src="/javascripts/video.js"></script>
 <script>
-    videojs('my-video').ready(function () {
-
-        var elems=window.parent.document.querySelectorAll('.playerTimingItem');
-        var arr=[];
-        elems.forEach(elem=>{
-            var start=parseInt(elem.getAttribute("start"));
-            var end=parseInt(elem.getAttribute("end"));
+    var player=videojs('my-video')
+    player.ready(function () {
+        console.log("ready");
+        var elems = window.parent.document.querySelectorAll('.playerTimingItem');
+        var arr = [];
+        elems.forEach(elem => {
+            var start = parseInt(elem.getAttribute("start"));
+            var end = parseInt(elem.getAttribute("end"));
             arr.push({elem, start, end});
         })
         console.log("document.parentNode", elems);
-    this.on('timeupdate', function () {
-       // console.log();
-        var time=this.currentTime()
-        arr.forEach(item=>{
-            if(item.start<=time && item.end>time){
-                item.elem.classList.add("active")
-            }
-            else
-            {
-                item.elem.classList.remove("active")
-            }
+        this.on('timeupdate', function () {
+            // console.log();
+            var time = this.currentTime()
+            arr.forEach(item => {
+                if (item.start <= time && item.end > time) {
+                    item.elem.classList.add("active")
+                } else {
+                    item.elem.classList.remove("active")
+                }
+            })
         })
-    })
-});
+    });
 
-  /*  player = videojs('my-video');
-    var playlistElems=[];
+    /*  player = videojs('my-video');
+      var playlistElems=[];
 
-player.on("timeupdate", (e)=>{
-    console.log("timeupdate", e);
-})*/
+  player.on("timeupdate", (e)=>{
+      console.log("timeupdate", e);
+  })*/
 </script>
 
 </body>
