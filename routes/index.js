@@ -27,8 +27,8 @@ router.get('/', async (req, res, next) =>{
 });
 router.get('/index/:lang?', async (req, res, next) =>{
 
- // res.redirect("/pronalog")
- // return;
+  res.redirect("/pronalog")
+  return;
 
   if(!req.params.lang)
     req.params.lang="ru"
