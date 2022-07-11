@@ -1,9 +1,9 @@
 {
   "pgConnection":  {
-  "host" : "db01.onevent.online",
-    "user" : "rustv",
-    "password" : "gbplf13",
-    "database" : "rustv"
+  "host" : "dbhost",
+    "user" : "username",
+    "password" : "userpass",
+    "database" : "sberpb"
   },
   "sha256Secret": "dfczgegrby"
 }
