@@ -20,9 +20,9 @@ router.post('/admin', async (req, res, next) =>{
 
 /* GET home page. */
 router.get('/', async (req, res, next) =>{
-  //res.render('work', { title: 'under constaction' });
+
  res.redirect("/index/ru")
-  //res.redirect("/registration/ru")
+
 
 });
 router.get('/index/:lang?', async (req, res, next) =>{
@@ -36,11 +36,9 @@ router.get('/index/:lang?', async (req, res, next) =>{
   if(!(req.params.lang=="ru" || req.params.lang=="en"))
     res.redirect("/index/ru")
 
- // if(req.session["user"])
- //   return res.redirect("/player/"+req.params.lang)
-  //res.render('work', { title: 'under constaction' });
+
   var content=await req.knex.select("*").from("t_sbpb_settings").orderBy("id", 'desc')
-  ///res.redirect("/login/ru")
+
   res.render('index', { title: 'sber-pb', stage:3/*3 6 1*/, lang:req.params.lang, speakers:content[0].speakers, site:content[0].site, content:content[0].content });
 
 });
@@ -51,9 +49,9 @@ router.get('/demo/', async (req, res, next) =>{
 
    if(req.session["user"])
      return res.redirect("/player/"+"ru")
-  //res.render('work', { title: 'under constaction' });
+
   var content=await req.knex.select("*").from("t_sbpb_settings").orderBy("id", 'desc')
-  ///res.redirect("/login/ru")
+
   res.render('index', { title: 'sber-pb', stage:3/*3 6 1*/, lang:"ru", speakers:content[0].speakers, site:content[0].site, content:content[0].content });
 });
 
@@ -63,9 +61,9 @@ router.get('/deposit/', async (req, res, next) =>{
 });
 router.get('/pronalog/', async (req, res, next) =>{
 
-  //res.render('work', { title: 'under constaction' });
+
   var content=await req.knex.select("*").from("t_sbpb_settings").where({id:234}).orderBy("id", 'desc')
-  ///res.redirect("/login/ru")
+
   res.render('pronalog', { title: 'sber-pb', stage:6/*3 6 1*/, lang:"ru", speakers:content[0].speakers, site:content[0].site, content:content[0].content });
 
 });
@@ -76,7 +74,7 @@ router.get('/registration/:lang?', async (req, res, next) =>{
   req.params.lang=req.params.lang.toLowerCase();
   if(!(req.params.lang=="ru" || req.params.lang=="en"))
     res.redirect("/index/ru")
-  //res.render('work', { title: 'under constaction' });
+
   var content=await req.knex.select("*").from("t_sbpb_settings").orderBy("id", 'desc')
   res.render('index', { title: 'sber-pb', stage:1, lang:req.params.lang, speakers:content[0].speakers, site:content[0].site, content:content[0].content });
 

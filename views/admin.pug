@@ -63,7 +63,7 @@ html
                 .playerChatPoleWr
                   .playerChatItem(v-for="item in q" v-if="!item.isDeleted ")
                     .playerChatTitle {{moment(item.date).format('HH:mm')}}
-                    //{{item.f}} {{item.i}} {{item.o}}
+
                     .playerChatText {{item.text}}
                     .playerChatDate.btnWr
                       .adminDeleteBtn(v-on:click="deleteQ(item)") Удалить

@@ -34,19 +34,11 @@ block content
 
         .toRegBtn.regInputError(v-if="stage==4")
             .regInputErrorTitle.active(v-bind:class="{active:err.e}") !{site.emailNoFound[lang]} <br>!{lang=='ru'?'или':'or'} <span class="toReg" v-on:click="window.history.pushState('sber-pb', 'sber-pb', '/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
-            //.regInputErrorTitle.active(v-bind:class="{active:err.e}") !{site.emailNoFound[lang]} <br>или <span class="toReg" v-on:click=" document.location.href='/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
+
         .regBtn(v-if="stage==3 || stage==4" v-on:click="login()" )
           div !{lang == "ru" ? "Войти" : "Log on"}
         .goToReg(v-if="stage==3 && !err.e") !{lang == 'ru' ? 'или' : 'or'}  <span class="toReg" v-on:click="window.history.pushState('sber-pb', 'sber-pb', '/registration/!{lang}') ; stage=1; isLogin=false">!{site.emailNoFound2[lang]} </span>
 
-      //div(v-if="stage==10" style="height: 100%;")
-        div.userRegComplite
-          div {{user.i}} {{user.o}},
-          div  !{site.waiting[lang]}
-          //script document.location.href="/player/ru";
-          //div  !{site.toCalendar[lang]}
-          .calendar
-            .googleCalButton(v-on:click="window.open('https://calendar.google.com/calendar/u/0/r/eventedit?text=%D0%94%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B5+%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B8+%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D1%85+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9:+%D1%87%D1%82%D0%BE+%D0%BD%D1%83%D0%B6%D0%BD%D0%BE+%D0%B7%D0%BD%D0%B0%D1%82%D1%8C+%D0%B8+%D0%BA+%D1%87%D0%B5%D0%BC%D1%83+%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%D1%81%D1%8F&dates=20220601T160000Z/20220601T173000Z&&location=https://sber-pb.ru&sf=true')") Google Calendar
-            .googleCalButton(v-on:click="window.open('/images/calendar.ics')") #{site.iCal[lang]}
+
       div(v-if="stage==5" style="height: 100%;")
         div PLAYR
