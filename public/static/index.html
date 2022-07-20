@@ -43,8 +43,8 @@
     <meta property="og:description"
           content="Предлагаем вашему вниманию видео дискуссии специалистов по налоговому и юридическому консультированию.  <br><br>Они обсудили самые острые вопросы в сфере налогов и валютного регулирования, с которыми в последнее время сталкиваются клиенты Private banking. <br><br>В Фокусе:">
     <meta property="og:image" content="https://sber-pb.ru/images/bg1.png">
-    <link href=" /javascripts/video-js.css" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script>try {
         eval("let a=()=>{;;};")
     } catch (e) {
@@ -204,20 +204,17 @@
             <div class="aboutForm">
                 <div class="aboutFormTitle">Наши спикеры</div>
                 <div class="speakers">
-                    <div vv-on:click="showSpeaker({&quot;img&quot;:&quot;201.png&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Лиа<br>Круглова&quot;,&quot;en&quot;:&quot;Dmitry<br>Golosov &quot;},&quot;position&quot;:{&quot;ru&quot;:&quot;Директор по налоговому консультированию Sber Private Banking &quot;,&quot;en&quot;:&quot;Director of Investment Consulting at Sber Private Banking&quot;},&quot;bio&quot;:{&quot;ru&quot;:&quot;&quot;,&quot;en&quot;:&quot;&quot;}})"
-                         class="speaker">
+                    <div class="speaker">
                         <div class="speakerPhoto"><img src="/images/201.png"></div>
                         <div class="sbeakerName">Лиа<br>Круглова</div>
                         <div class="speakerPos">Директор по налоговому консультированию Sber Private Banking</div>
                     </div>
-                    <div vv-on:click="showSpeaker({&quot;img&quot;:&quot;202.png&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Анна<br>Савон&quot;,&quot;en&quot;:&quot;Andrey  <br>Shenk &quot;},&quot;position&quot;:{&quot;ru&quot;:&quot;Директор EY, группа по оказанию услуг частным клиентам&quot;,&quot;en&quot;:&quot;&quot;},&quot;bio&quot;:{&quot;ru&quot;:&quot;&quot;,&quot;en&quot;:&quot;&quot;}})"
-                         class="speaker">
+                    <div class="speaker">
                         <div class="speakerPhoto"><img src="/images/202.png"></div>
                         <div class="sbeakerName">Анна<br>Савон</div>
                         <div class="speakerPos">Директор EY, группа по оказанию услуг частным клиентам</div>
                     </div>
-                    <div vv-on:click="showSpeaker({&quot;img&quot;:&quot;203.png&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Алина<br>Василюк&quot;,&quot;en&quot;:&quot;Evgeny  <br>Kochemazov &quot;},&quot;position&quot;:{&quot;ru&quot;:&quot;Менеджер EY, группа по оказанию услуг частным клиентам&quot;,&quot;en&quot;:&quot;&quot;},&quot;bio&quot;:{&quot;ru&quot;:&quot;&quot;,&quot;en&quot;:&quot;&quot;}})"
-                         class="speaker">
+                    <div class="speaker">
                         <div class="speakerPhoto"><img src="/images/203.png"></div>
                         <div class="sbeakerName">Алина<br>Василюк</div>
                         <div class="speakerPos">Менеджер EY, группа по оказанию услуг частным клиентам</div>
@@ -406,14 +403,10 @@
             </div>
         </div>
     </div><!----></div>
-<script>var stage = 6;
-var lang = "ru";
-
+<script>
 function navigateToTime(sec) {
     document.getElementById('playerIframe').contentWindow.player.currentTime(sec + 6);
     document.getElementById('playerIframe').contentWindow.player.play();
-
-
 }
 
 
