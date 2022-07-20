@@ -41,6 +41,40 @@ input:focus, input:active {
     font-weight: 700;
     font-style: normal
 }
+@font-face {
+    font-family: 'SBSansText';
+    src: url("fonts/sbsanstext/SBSansText-Bold.eot");
+    src: url("fonts/sbsanstext/SBSansText-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/sbsanstext/SBSansText-Bold.svg#SBSansText-Bold") format("svg"), url("fonts/sbsanstext/SBSansText-Bold.ttf") format("truetype"), url("fonts/sbsanstext/SBSansText-Bold.woff") format("woff"), url("fonts/sbsanstext/SBSansText-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'SBSansText';
+    src: url("fonts/sbsanstext/SBSansText-Light.eot");
+    src: url("fonts/sbsanstext/SBSansText-Light.eot?#iefix") format("embedded-opentype"), url("fonts/sbsanstext/SBSansText-Light.svg#SBSansText-Light") format("svg"), url("fonts/sbsanstext/SBSansText-Light.ttf") format("truetype"), url("fonts/sbsanstext/SBSansText-Light.woff") format("woff"), url("fonts/sbsanstext/SBSansText-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'SBSansText';
+    src: url("fonts/sbsanstext/SBSansText-Regular.eot");
+    src: url("fonts/sbsanstext/SBSansText-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/sbsanstext/SBSansText-Regular.svg#SBSansText-Regular") format("svg"), url("fonts/sbsanstext/SBSansText-Regular.ttf") format("truetype"), url("fonts/sbsanstext/SBSansText-Regular.woff") format("woff"), url("fonts/sbsanstext/SBSansText-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'SBSansText';
+    src: url("fonts/sbsanstext/SBSansText-Semibold.eot");
+    src: url("fonts/sbsanstext/SBSansText-Semibold.eot?#iefix") format("embedded-opentype"), url("fonts/sbsanstext/SBSansText-Semibold.svg#SBSansText-Semibold") format("svg"), url("fonts/sbsanstext/SBSansText-Semibold.ttf") format("truetype"), url("fonts/sbsanstext/SBSansText-Semibold.woff") format("woff"), url("fonts/sbsanstext/SBSansText-Semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'SBSansText';
+    src: url("fonts/sbsanstext/SBSansText-Thin.eot");
+    src: url("fonts/sbsanstext/SBSansText-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/sbsanstext/SBSansText-Thin.svg#SBSansText-Thin") format("svg"), url("fonts/sbsanstext/SBSansText-Thin.ttf") format("truetype"), url("fonts/sbsanstext/SBSansText-Thin.woff") format("woff"), url("fonts/sbsanstext/SBSansText-Thin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal; }
 
 body {
     font-family: "SBSansText", Arial, sans-serif;
@@ -720,7 +754,8 @@ footer .mainLogo {
     color: #353F47;
     width: 90%;
     font-size: 27px;
-    line-height: 35px
+    line-height: 35px;
+    font-family: "SBSansDisplay", Arial, sans-serif;
 }
 
 .playerTitle .mainDate {
