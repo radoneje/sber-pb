@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link rel='stylesheet' , href='./accets/css/style.css'/>
+    <link href="./assets/css/video-js.css" rel="stylesheet"/>
+</head>
+<body style="overflow: hidden">
+<div class="videoWrapper" style="overflow: hidden">
+    <video id="my-video" style="overflow: hidden" controls width="1280" height="720"
+           class="video-js vjs-big-play-centered" playsinline poster="./assets/img/poster_v2.png">
+        <source src="/video/v5.mp4" type="video/mp4"/>
+    </video>
+</div>
+<script src="./assets/js/video.js"></script>
+<script>
+    var player=videojs('my-video')
+    player.ready(function () {
+        var elems = window.parent.document.querySelectorAll('.playerTimingItem');
+        var arr = [];
+        elems.forEach(elem => {
+            var start = parseInt(elem.getAttribute("start"));
+            var end = parseInt(elem.getAttribute("end"));
+            arr.push({elem, start, end});
+        })
+        this.on('timeupdate', function () {
+            var time = this.currentTime()
+            arr.forEach(item => {
+                if (item.start <= time && item.end > time) {
+                    item.elem.classList.add("active")
+                } else {
+                    item.elem.classList.remove("active")
+                }
+            })
+        })
+    });
+</script>
+</body>
+</html>
