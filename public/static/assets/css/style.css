@@ -1110,7 +1110,7 @@ footer .mainLogo {
 
 @media (max-width: 1300px) {
     .playerTiming {
-        padding: 24px 0
+        padding: 24px 12px;
     }
 
     .regForm {
